@@ -1,8 +1,5 @@
-// import { PopularRoutes } from "@/components/home/PopularRoutes";
-// import { SeasonalRecommendations } from "@/components/home/SeasonalRecommendations";
-// import { Testimonials } from "@/components/home/Testimonials";
 import { Button } from "@/components/ui/Button";
-import { Calendar, Clock, MapPin, Navigation } from "lucide-react";
+import { Calendar, Clock, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +7,12 @@ export default function Home() {
 	return (
 		<div className="space-y-32">
 			{/* ヒーローセクション */}
-			<section className="relative text-center space-y-6 py-32 animated-gradient text-white rounded-3xl overflow-hidden">
+			<section
+				className="relative text-center space-y-6 py-32
+                         bg-gradient-to-r from-purple-600 via-pink-500 to-red-500
+                         text-white rounded-3xl overflow-hidden"
+			>
+				{/* オーバーレイ（背景画像や黒フィルターを足したい場合） */}
 				<div className="absolute inset-0 bg-black/20" />
 				<div className="relative z-10">
 					<h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
@@ -18,14 +20,15 @@ export default function Home() {
 						<br className="md:hidden" />
 						ドライブプランを作成
 					</h1>
-					<p className="text-xl text-white/80 max-w-[600px] mx-auto">
+					<p className="text-xl text-white/90 max-w-[600px] mx-auto mt-4">
 						行きたい場所と時間を入力するだけ。
 						AIがあなたに最適なルートを提案します。
 					</p>
 					<Link href="/home">
 						<Button
 							size="lg"
-							className="mt-8 bg-white text-primary hover:bg-white/90"
+							className="mt-8 bg-primary text-black hover:bg-primary/90 bg-white
+                         rounded-full px-8 py-6 text-lg font-medium shadow-lg"
 						>
 							無料でルートを作成
 						</Button>
@@ -65,11 +68,17 @@ export default function Home() {
 						},
 					].map((feature, i) => (
 						<div
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							key={i}
-							className="group p-6 rounded-2xl transition-all hover:bg-primary/5 hover-card-effect"
+							className="group p-6 rounded-2xl transition-all
+                         hover:bg-primary/5 hover-card-effect"
 						>
 							<div className="text-center space-y-4">
-								<div className="mx-auto w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-all group-hover:scale-110">
+								<div
+									className="mx-auto w-12 h-12 rounded-xl bg-primary/10
+                             flex items-center justify-center transition-all
+                             group-hover:scale-110"
+								>
 									<feature.icon className="w-6 h-6 text-primary" />
 								</div>
 								<h3 className="text-xl font-semibold">{feature.title}</h3>
@@ -81,13 +90,17 @@ export default function Home() {
 			</section>
 
 			{/* CTAセクション */}
-			<section className="text-center py-20 gradient-bg text-white rounded-2xl relative overflow-hidden">
-				<div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464660439080-b79116909ce7?w=1200')] bg-cover bg-center opacity-20" />
-				<div className="relative z-10">
-					<h2 className="text-3xl font-bold mb-6">
-						あなたの思い出に残るドライブを
-					</h2>
-					<p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+			<section
+				className="relative text-center py-20 rounded-2xl overflow-hidden
+                   bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500
+                   text-white"
+			>
+				{/* 背景画像など追加したい場合 */}
+				<div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464660439080-b79116909ce7?w=1200')] bg-cover bg-center opacity-30" />
+
+				<div className="relative z-10 space-y-6 px-4">
+					<h2 className="text-3xl font-bold">あなたの思い出に残るドライブを</h2>
+					<p className="text-xl text-white/90 max-w-2xl mx-auto">
 						AIがあなたの希望に合わせて、最適なドライブプランを提案します。
 						素敵な思い出作りのお手伝いをさせてください。
 					</p>
@@ -95,7 +108,8 @@ export default function Home() {
 						<Button
 							size="lg"
 							variant="secondary"
-							className="bg-white text-primary hover:bg-white/90"
+							className="mt-8 bg-primary text-black hover:bg-primary/90 bg-white
+							rounded-full px-8 py-6 text-lg font-medium shadow-lg"
 						>
 							無料でルートを作成
 						</Button>
