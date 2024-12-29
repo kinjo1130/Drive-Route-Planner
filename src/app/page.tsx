@@ -27,7 +27,7 @@ export default function Home() {
 					<Link href="/home">
 						<Button
 							size="lg"
-							className="mt-8 bg-primary text-black hover:bg-primary/90 bg-white
+							className="mt-8 bg-primary text-black hover:bg-slate-200 bg-white
                          rounded-full px-8 py-6 text-lg font-medium shadow-lg"
 						>
 							無料でルートを作成
@@ -108,7 +108,7 @@ export default function Home() {
 						<Button
 							size="lg"
 							variant="secondary"
-							className="mt-8 bg-primary text-black hover:bg-primary/90 bg-white
+							className="mt-8 bg-primary text-black hover:bg-slate-200 bg-white
 							rounded-full px-8 py-6 text-lg font-medium shadow-lg"
 						>
 							無料でルートを作成
